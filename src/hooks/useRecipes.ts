@@ -16,34 +16,24 @@ const useRecipes = () => {
 
   // 4. Fetch recipes when the hook is first used
   useEffect(() => {
-    let isMounted = true;
-
     const loadRecipes = async () => {
       try {
         setIsLoading(true);
 
         const data = await fetchRecipes();
 
-        if (isMounted) {
-          setRecipes(data);
-        }
-      } catch (err) {
-        if (isMounted) {
-          setError("Failed to load recipes. Please try again.");
-        }
+        setRecipes(data);
+        setError(null);
+      } catch {
+        setError("Failed to load recipes.");
       } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
+        setIsLoading(false);
       }
     };
 
     loadRecipes();
-
-    return () => {
-      isMounted = false;
-    };
   }, []);
+
 
   // 5. Add a new recipe
   const addRecipe = (newRecipe: NewRecipe) => {
