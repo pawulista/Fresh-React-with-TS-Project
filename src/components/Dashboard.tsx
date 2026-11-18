@@ -2,12 +2,15 @@
 import { useState } from "react";
 
 import type { RecipeCategory } from "../types/recipe";
+import type { NewRecipe } from "../types/recipe";
 
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import StatCard from "./StatCard";
 import RecipeFilters from "./RecipeFilters";
 import RecipeList from "./RecipeList";
+import AddRecipeForm from "./AddRecipeForm";
+
 
 import useRecipes from "../hooks/useRecipes";
 
@@ -22,6 +25,7 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
     recipes,
     isLoading,
     error,
+    addRecipe,
   } = useRecipes();
 
   // 2. Manage search state
@@ -34,6 +38,10 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
   // 4. Manage vegetarian state
   const [showVegetarianOnly, setShowVegetarianOnly] =
     useState<boolean>(false);
+
+  // Create form visibility state
+  const [isAddFormOpen, setIsAddFormOpen] =
+  useState<boolean>(false);
 
   // 5. Calculate average preparation time
   const totalPrepTime = recipes.reduce(
@@ -82,6 +90,12 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
         .includes(searchTerm.trim().toLowerCase());
     }
   );
+
+  const handleAddRecipe = (newRecipe: NewRecipe) => {
+  addRecipe(newRecipe);
+
+  setIsAddFormOpen(false);
+};
 
   // 11. Loading state
   if (isLoading) {
@@ -157,15 +171,35 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
           {/* Recipe section */}
           <section id="recipes" className="space-y-6">
 
-            <div>
-              <h2 className="text-xl font-bold text-slate-800">
-                Your Recipes
-              </h2>
+            {/* Section heading and add button */}
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
-              <p className="mt-1 text-sm text-slate-500">
-                Explore and manage your meals.
-              </p>
+              <div>
+                <h2 className="text-xl font-bold text-slate-800">
+                  Your Recipes
+                </h2>
+
+                <p className="mt-1 text-sm text-slate-500">
+                  Explore and manage your meals.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setIsAddFormOpen((previous) => !previous)}
+                className="rounded-lg bg-green-600 px-5 py-3 font-semibold text-white transition hover:bg-green-700"
+              >
+                {isAddFormOpen ? "Close Form" : "+ Add New Recipe"}
+              </button>
+
             </div>
+
+            {/* Add recipe form */}
+            {isAddFormOpen && (
+              <AddRecipeForm
+                onAddRecipe={handleAddRecipe}
+                onCancel={() => setIsAddFormOpen(false)}
+              />
+            )}
 
             {/* Search and filters */}
             <RecipeFilters
