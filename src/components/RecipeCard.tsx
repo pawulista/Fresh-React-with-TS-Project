@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
     Snack: "bg-pink-100 text-pink-700",
   };
 
-  const imageUrl = recipeImages[recipe.id];
+  const imageUrl = recipeImages[recipe.id] || recipeImages[1];
 
   return (
     <article className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
