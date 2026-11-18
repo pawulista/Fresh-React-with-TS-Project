@@ -56,7 +56,7 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
   // 6. Handle error state
   if (error) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-100">
+      <div className="flex min-h-screen items-center justify-center bg-slate-300">
         <p className="text-red-600">{error}</p>
       </div>
     );

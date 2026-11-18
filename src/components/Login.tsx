@@ -36,7 +36,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-slate-200 px-4 py-8">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
 
         {/* Logo and heading */}

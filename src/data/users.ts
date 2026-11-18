@@ -2,15 +2,15 @@ import type { User } from "../types/recipe";
 
 export const mockUsers: User[] = [
   {
-    email: "admin@gmail.com",
-    password: "admin123",
+    email: "paul@gmail.com",
+    password: "Paul123@",
   },
   {
-    email: "user@gmail.com",
-    password: "user123",
+    email: "aime@gmail.com",
+    password: "Aime123@",
   },
   {
-    email: "chef@gmail.com",
-    password: "chef123",
+    email: "raga@gmail.com",
+    password: "Raga123@",
   },
 ];
