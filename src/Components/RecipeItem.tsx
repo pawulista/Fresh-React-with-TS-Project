@@ -1,0 +1,106 @@
+interface recipeItemProps {
+    id: number;
+    name: string;
+    category: 'Breakfast' | "Lunch" | "Dinner" | "Snack";
+    prepTime: number;
+    calories: number;
+    isVegetarian: Boolean;
+}
+export const RecipeItem: recipeItemProps[] = [
+  {
+    id: 1,
+    name: "Jollof Rice",
+    category: "Lunch",
+    prepTime: 40,
+    calories: 450,
+    isVegetarian: false,
+  },
+  {
+    id: 2,
+    name: "Vegetable Omelette",
+    category: "Breakfast",
+    prepTime: 15,
+    calories: 220,
+    isVegetarian: true,
+  },
+  {
+    id: 3,
+    name: "Grilled Chicken",
+    category: "Dinner",
+    prepTime: 35,
+    calories: 380,
+    isVegetarian: false,
+  },
+  {
+    id: 4,
+    name: "Fruit Salad",
+    category: "Snack",
+    prepTime: 10,
+    calories: 150,
+    isVegetarian: true,
+  },
+  {
+    id: 5,
+    name: "Vegetable Stir Fry",
+    category: "Lunch",
+    prepTime: 25,
+    calories: 280,
+    isVegetarian: true,
+  },
+  {
+    id: 6,
+    name: "Pancakes",
+    category: "Breakfast",
+    prepTime: 20,
+    calories: 350,
+    isVegetarian: true,
+  },
+  {
+    id: 7,
+    name: "Beef Stew",
+    category: "Dinner",
+    prepTime: 50,
+    calories: 520,
+    isVegetarian: false,
+  },
+  {
+    id: 8,
+    name: "Banana Smoothie",
+    category: "Snack",
+    prepTime: 5,
+    calories: 180,
+    isVegetarian: true,
+  },
+  {
+    id: 9,
+    name: "Grilled Fish",
+    category: "Lunch",
+    prepTime: 30,
+    calories: 320,
+    isVegetarian: false,
+  },
+  {
+    id: 10,
+    name: "Chicken Sandwich",
+    category: "Breakfast",
+    prepTime: 15,
+    calories: 300,
+    isVegetarian: false,
+  },
+  {
+    id: 11,
+    name: "Vegetable Soup",
+    category: "Dinner",
+    prepTime: 30,
+    calories: 200,
+    isVegetarian: true,
+  },
+  {
+    id: 12,
+    name: "Roasted Groundnuts",
+    category: "Snack",
+    prepTime: 10,
+    calories: 170,
+    isVegetarian: true,
+  }
+];
