@@ -1,6 +1,5 @@
 
 import type { Recipe } from "../types/recipe";
-
 import RecipeCard from "./RecipeCard";
 
 interface RecipeListProps {
@@ -8,20 +7,20 @@ interface RecipeListProps {
 }
 
 const RecipeList = ({ recipes }: RecipeListProps) => {
-
-  // Check whether recipes are available
+  // Check whether recipes exist
   if (recipes.length === 0) {
     return (
-      <div className="rounded-2xl bg-white px-6 py-16 text-center shadow-sm">
+      <div className="flex min-h-64 flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-200 bg-white p-8 text-center">
 
-        <div className="text-5xl">🔍</div>
+        <span className="text-5xl">🍽️</span>
 
         <h3 className="mt-4 text-lg font-bold text-slate-800">
-          No recipes found
+          No Recipes Found
         </h3>
 
-        <p className="mt-2 text-sm text-slate-500">
-          Try changing your search or filter settings.
+        <p className="mt-2 max-w-sm text-sm text-slate-500">
+          We couldn't find any recipes matching your search.
+          Try changing your search or filters.
         </p>
 
       </div>
@@ -29,7 +28,7 @@ const RecipeList = ({ recipes }: RecipeListProps) => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
 
       {recipes.map((recipe) => (
         <RecipeCard
