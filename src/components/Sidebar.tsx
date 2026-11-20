@@ -1,7 +1,7 @@
 
 const Sidebar = () => {
   return (
-    <aside className="hidden min-h-screen w-64 shrink-0 bg-white p-6 shadow-sm md:block">
+    <aside className="w-full shrink-0 border-b border-slate-200 bg-white p-4 md:min-h-screen md:w-64 md:border-b-0 md:border-r md:p-6">
 
       {/* Logo */}
       <div className="mb-10 flex items-center gap-3">
