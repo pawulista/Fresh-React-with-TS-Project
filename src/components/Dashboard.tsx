@@ -118,7 +118,7 @@ const Dashboard = ({ onLogout }: DashboardProps) => {
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-100">
+    <div className="flex min-h-screen flex-col bg-slate-200 md:flex-row">
 
       {/* Sidebar */}
       <Sidebar />
