@@ -1,6 +1,11 @@
-import { RecipeCard } from "./RecipeItem";
+import { RecipeItem } from "./RecipeItem";
+import type { recipeItemProps } from "./RecipeItem";
 
 
-function FetchRecords(): Promise<RecipeCard[]> {
-    return new Promi
-}   
+export const Fetch = async(): Promise<recipeItemProps[]> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(RecipeItem);
+        }, 800);
+    });
+};

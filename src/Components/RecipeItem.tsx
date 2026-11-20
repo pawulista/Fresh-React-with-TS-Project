@@ -1,10 +1,10 @@
-interface recipeItemProps {
+export interface recipeItemProps {
     id: number;
     name: string;
     category: 'Breakfast' | "Lunch" | "Dinner" | "Snack";
     prepTime: number;
     calories: number;
-    isVegetarian: Boolean;
+    isVegetarian: boolean;
 }
 export const RecipeItem: recipeItemProps[] = [
   {
